@@ -18,6 +18,9 @@
     <div id="wrapper">
         <aside id="nav">
             <nav>
+				<li>
+					<a href="?oldal=kepek">Képek</a>
+				</li>
                 <ul>
 					<?php foreach ($oldalak as $url => $oldal) { ?>
 						<?php if(! isset($_SESSION['login']) && $oldal['menun'][0] || isset($_SESSION['login']) && $oldal['menun'][1]) { ?>

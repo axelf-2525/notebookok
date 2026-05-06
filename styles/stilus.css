@@ -537,3 +537,159 @@ code {
         text-align: center;
     }
 }
+
+.topnav {
+    max-width: 1360px;
+    margin: 24px auto;
+    padding: 14px 18px;
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 22px;
+    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.10);
+}
+
+.topnav ul {
+    display: flex;
+    gap: 12px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+.topnav li a {
+    display: block;
+    padding: 12px 18px;
+    border-radius: 14px;
+    color: #0f172a;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.topnav li.active a,
+.topnav li a:hover {
+    background: linear-gradient(135deg, #2563eb, #06b6d4);
+    color: white;
+}
+
+.menu-toggle {
+    display: none;
+    border: 0;
+    padding: 12px 16px;
+    border-radius: 14px;
+    background: #2563eb;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.logged-user {
+    margin-top: 8px;
+    color: #475569;
+}
+
+.hero,
+.card,
+.media-box,
+.map-section {
+    background: white;
+    border: 1px solid #dbe3ef;
+    border-radius: 22px;
+    padding: 28px;
+    box-shadow: 0 14px 35px rgba(15, 23, 42, 0.08);
+}
+
+.hero {
+    background: linear-gradient(135deg, #e0ecff, #dffcff);
+}
+
+.eyebrow {
+    color: #1d4ed8;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 13px 20px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #2563eb, #06b6d4);
+    color: white;
+    text-decoration: none;
+    font-weight: 800;
+}
+
+.info-grid,
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 24px;
+}
+
+.media-grid {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.media-section,
+.map-section {
+    margin-top: 24px;
+}
+
+video,
+iframe {
+    width: 100%;
+    border: 0;
+    border-radius: 18px;
+}
+
+video {
+    max-height: 320px;
+    background: #020617;
+}
+
+.media-box iframe,
+.map-section iframe {
+    height: 320px;
+}
+
+.note {
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .media-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobil */
+@media (max-width: 700px) {
+    .menu-toggle {
+        display: block;
+        width: 100%;
+    }
+
+    .topnav ul {
+        display: none;
+        margin-top: 12px;
+        flex-direction: column;
+    }
+
+    body.menu-open .topnav ul {
+        display: flex;
+    }
+
+    .hero,
+    .card,
+    .media-box,
+    .map-section {
+        padding: 20px;
+    }
+}

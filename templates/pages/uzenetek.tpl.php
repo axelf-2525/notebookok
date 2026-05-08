@@ -1,27 +1,9 @@
 <h2>Beküldött üzenetek</h2>
+
 <p class="lead">
-    Itt láthatók a Kapcsolat oldalon beküldött üzenetek, fordított időrendben.
+    Itt láthatók a Kapcsolat oldalon beküldött üzenetek.
+    A lista fordított időrendben jelenik meg, vagyis a legfrissebb üzenet van legfelül.
 </p>
-
-<?php
-if (!isset($_SESSION['login'])) {
-    header('Location: belepes');
-    exit;
-}
-
-try {
-    $dbh = getDb();
-
-    $sql = "SELECT id, nev, email, targy, uzenet, kuldes_ideje, felhasznalo
-            FROM uzenetek
-            ORDER BY kuldes_ideje DESC";
-
-    $uzenetek = $dbh->query($sql)->fetchAll();
-} catch (PDOException $e) {
-    $uzenetek = [];
-    $uzenetHiba = $e->getMessage();
-}
-?>
 
 <?php if (isset($uzenetHiba)) { ?>
     <section class="message error">
@@ -30,22 +12,25 @@ try {
     </section>
 <?php } elseif (empty($uzenetek)) { ?>
     <section class="message">
-        <p>Még nem érkezett üzenet.</p>
+        <h3>Nincs megjeleníthető üzenet</h3>
+        <p>Még nem érkezett üzenet a Kapcsolat űrlapon keresztül.</p>
     </section>
 <?php } else { ?>
     <div class="table-wrapper">
         <table>
             <caption>Kapcsolat űrlapon beküldött üzenetek</caption>
+
             <thead>
                 <tr>
                     <th>Küldés ideje</th>
-                    <th>Küldő neve</th>
-                    <th>E-mail</th>
+                    <th>Üzenetküldő neve</th>
+                    <th>E-mail cím</th>
                     <th>Tárgy</th>
                     <th>Üzenet</th>
-                    <th>Felhasználó</th>
+                    <th>Bejelentkezett felhasználó</th>
                 </tr>
             </thead>
+
             <tbody>
                 <?php foreach ($uzenetek as $uzenet) { ?>
                     <tr>
@@ -54,7 +39,13 @@ try {
                         <td><?= htmlspecialchars($uzenet['email']) ?></td>
                         <td><?= htmlspecialchars($uzenet['targy']) ?></td>
                         <td><?= nl2br(htmlspecialchars($uzenet['uzenet'])) ?></td>
-                        <td><?= htmlspecialchars($uzenet['felhasznalo'] ?: 'Vendég') ?></td>
+                        <td>
+                            <?php if (!empty($uzenet['felhasznalo'])) { ?>
+                                <?= htmlspecialchars($uzenet['felhasznalo']) ?>
+                            <?php } else { ?>
+                                Vendég
+                            <?php } ?>
+                        </td>
                     </tr>
                 <?php } ?>
             </tbody>

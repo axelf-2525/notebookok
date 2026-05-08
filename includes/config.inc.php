@@ -8,6 +8,7 @@ $DB_NAME = 'u4bkst';
 $DB_USER = 'u4bkst';
 $DB_PASS = 'U4BKST2026WEB';
 
+
 function getDb(): PDO
 {
     global $DB_HOST, $DB_NAME, $DB_USER, $DB_PASS;
@@ -46,6 +47,12 @@ $oldalak = [
     'tablazat' => [
         'fajl' => 'tablazat',
         'szoveg' => 'Notebookok',
+        'menun' => [1, 1]
+    ],
+
+    'crud' => [
+        'fajl' => 'crud',
+        'szoveg' => 'CRUD',
         'menun' => [1, 1]
     ],
 

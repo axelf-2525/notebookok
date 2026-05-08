@@ -4,9 +4,9 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 $DB_HOST = 'localhost';
-$DB_NAME = 'gyakorlat7';
-$DB_USER = 'root';
-$DB_PASS = '';
+$DB_NAME = 'u4bkst';
+$DB_USER = 'u4bkst';
+$DB_PASS = 'U4BKST2026WEB';
 
 function getDb(): PDO
 {
@@ -37,14 +37,56 @@ $lablec = [
 ];
 
 $oldalak = [
-    'cimlap' => ['fajl' => 'cimlap', 'szoveg' => 'Címlap', 'menun' => [1, 1]],
-    'tablazat' => ['fajl' => 'tablazat', 'szoveg' => 'Notebookok', 'menun' => [1, 1]],
-    'kepek' => ['fajl' => 'kepek', 'szoveg' => 'Képfeltöltés', 'menun' => [0, 1]],
-    'kapcsolat' => ['fajl' => 'kapcsolat', 'szoveg' => 'Kapcsolat', 'menun' => [1, 1]],
-    'belepes' => ['fajl' => 'belepes', 'szoveg' => 'Belépés', 'menun' => [1, 0]],
-    'kilepes' => ['fajl' => 'kilepes', 'szoveg' => 'Kilépés', 'menun' => [0, 1]],
-    'belep' => ['fajl' => 'belep', 'szoveg' => '', 'menun' => [0, 0]],
-    'regisztral' => ['fajl' => 'regisztral', 'szoveg' => '', 'menun' => [0, 0]],
+    'cimlap' => [
+        'fajl' => 'cimlap',
+        'szoveg' => 'Címlap',
+        'menun' => [1, 1]
+    ],
+
+    'tablazat' => [
+        'fajl' => 'tablazat',
+        'szoveg' => 'Notebookok',
+        'menun' => [1, 1]
+    ],
+
+    'kepek' => [
+        'fajl' => 'kepek',
+        'szoveg' => 'Képfeltöltés',
+        'menun' => [0, 1]
+    ],
+
+    'kapcsolat' => [
+        'fajl' => 'kapcsolat',
+        'szoveg' => 'Kapcsolat',
+        'menun' => [1, 1]
+    ],
+
+    'belepes' => [
+        'fajl' => 'belepes',
+        'szoveg' => 'Belépés',
+        'menun' => [1, 0]
+    ],
+
+    'kilepes' => [
+        'fajl' => 'kilepes',
+        'szoveg' => 'Kilépés',
+        'menun' => [0, 1]
+    ],
+
+    'belep' => [
+        'fajl' => 'belep',
+        'szoveg' => '',
+        'menun' => [0, 0]
+    ],
+
+    'regisztral' => [
+        'fajl' => 'regisztral',
+        'szoveg' => '',
+        'menun' => [0, 0]
+    ],
 ];
 
-$hiba_oldal = ['fajl' => '404', 'szoveg' => 'A keresett oldal nem található!'];
+$hiba_oldal = [
+    'fajl' => '404',
+    'szoveg' => 'A keresett oldal nem található!'
+];

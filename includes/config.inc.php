@@ -61,6 +61,12 @@ $oldalak = [
         'menun' => [1, 1]
     ],
 
+    'uzenetek' => [
+        'fajl' => 'uzenetek',
+        'szoveg' => 'Üzenetek',
+        'menun' => [0, 1]
+    ],
+
     'belepes' => [
         'fajl' => 'belepes',
         'szoveg' => 'Belépés',

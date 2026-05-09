@@ -45,11 +45,17 @@ if (file_exists('./logicals/' . $keres['fajl'] . '.php')) {
         </header>
 
         <nav class="topnav">
-            <button type="button" class="menu-button" onclick="document.body.classList.toggle('menu-open')">
+            <button
+                type="button"
+                class="menu-toggle"
+                onclick="document.body.classList.toggle('menu-open'); this.setAttribute('aria-expanded', document.body.classList.contains('menu-open') ? 'true' : 'false');"
+                aria-expanded="false"
+                aria-controls="main-menu"
+            >
                 ☰ Menü
             </button>
 
-            <ul>
+            <ul id="main-menu">
                 <?php foreach ($oldalak as $url => $oldal) { ?>
                     <?php if ((!isset($_SESSION['login']) && $oldal['menun'][0]) || (isset($_SESSION['login']) && $oldal['menun'][1])) { ?>
                         <li<?= (($oldal == $keres) ? ' class="active"' : '') ?>>
